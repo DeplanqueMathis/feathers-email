@@ -14,6 +14,7 @@ import {
 import { EmailsService, getOptions } from './emails.class.js'
 import { emailsPath, emailsMethods } from './emails.shared.js'
 import { disable } from '../../hooks/disable.js'
+import { sendEmail } from '../../hooks/sendEmail.js'
 
 export * from './emails.class.js'
 export * from './emails.schema.js'
@@ -41,7 +42,7 @@ export const emails = (app) => {
       remove: []
     },
     after: {
-      all: []
+      create: [sendEmail]
     },
     error: {
       all: []

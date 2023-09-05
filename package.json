@@ -54,6 +54,7 @@
     "@feathersjs/schema": "^5.0.8",
     "@feathersjs/transport-commons": "^5.0.8",
     "@feathersjs/typebox": "^5.0.8",
+    "feathers-mailer": "^4.1.1",
     "mongodb": "^5.8.1",
     "winston": "^3.10.0"
   },

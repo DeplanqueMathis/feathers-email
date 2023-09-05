@@ -27,7 +27,7 @@ export const emailsResolver = resolve({})
 export const emailsExternalResolver = resolve({})
 
 // Schema for creating new entries
-export const emailsDataSchema = Type.Pick(emailsSchema, ['text', 'name'], {
+export const emailsDataSchema = Type.Pick(emailsSchema, ['text', 'name', 'from'], {
   $id: 'EmailsData'
 })
 export const emailsDataValidator = getValidator(emailsDataSchema, dataValidator)
@@ -41,7 +41,7 @@ export const emailsPatchValidator = getValidator(emailsPatchSchema, dataValidato
 export const emailsPatchResolver = resolve({})
 
 // Schema for allowed query properties
-export const emailsQueryProperties = Type.Pick(emailsSchema, ['_id', 'text', 'name'])
+export const emailsQueryProperties = Type.Pick(emailsSchema, ['_id', 'text', 'name', 'from'])
 export const emailsQuerySchema = Type.Intersect(
   [
     querySyntax(emailsQueryProperties),

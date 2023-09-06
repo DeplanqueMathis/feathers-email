@@ -1,4 +1,4 @@
-# mad-api
+# feathers-mail-api
 
 > 
 
@@ -12,7 +12,7 @@ This project uses [Feathers](http://feathersjs.com). An open source framework fo
 2. Install your dependencies
 
     ```
-    cd path/to/mad-api
+    cd path/to/feathers-mail-api
     npm install
     ```
 

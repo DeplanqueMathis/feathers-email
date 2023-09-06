@@ -5,36 +5,43 @@
 ## About
 
 This project uses [Feathers](http://feathersjs.com). An open source framework for building APIs and real-time applications.
+This project is a simple way to send email from a feathers api.
 
 ## Getting Started
 
 1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 2. Install your dependencies
 
-    ```
-    cd path/to/feathers-mail-api
-    npm install
-    ```
+  ```
+  cd path/to/feathers-mail-api
+  npm install
+  ```
+3. In your config file add the smtp config object like this : 
+  ```
+  "smtp": {
 
-3. Start your app
+  }
+  ```
+4. Start your app
 
-    ```
-    npm start
-    ```
+  ```
+  npm start
+  ```
+5. With any api testing application like [Postman](https://www.postman.com/) call the following url
 
-## Testing
+  ```
+  http://localhost:3030/emails
+  ```
 
-Run `npm test` and all your tests in the `test/` directory will be run.
+  With following body parameters :
 
-## Scaffolding
-
-This app comes with a powerful command line interface for Feathers. Here are a few things it can do:
-
-```
-$ npx feathers help                           # Show all commands
-$ npx feathers generate service               # Generate a new Service
-```
-
-## Help
-
-For more information on all the things you can do with Feathers visit [docs.feathersjs.com](http://docs.feathersjs.com).
+  ```
+  {
+    "name": "NAME",
+    "from": "SENDER_EMAIL",
+    "to": "DESTINATION_EMAIL",
+    "subject": "SUBJECT",
+    "text": "TEXT",
+    "html": "HTML_TEXT"
+  }
+  ```

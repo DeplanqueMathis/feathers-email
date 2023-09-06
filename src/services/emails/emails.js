@@ -13,8 +13,9 @@ import {
 } from './emails.schema.js'
 import { EmailsService, getOptions } from './emails.class.js'
 import { emailsPath, emailsMethods } from './emails.shared.js'
-import { disable } from '../../hooks/disable.js'
+import { disallow } from 'feathers-hooks-common';
 import { sendEmail } from '../../hooks/sendEmail.js'
+import { antiMailSpamming } from '../../hooks/antiMailSpamming.js'
 
 export * from './emails.class.js'
 export * from './emails.schema.js'
@@ -35,9 +36,9 @@ export const emails = (app) => {
     },
     before: {
       all: [schemaHooks.validateQuery(emailsQueryValidator), schemaHooks.resolveQuery(emailsQueryResolver)],
-      find: [disable],
-      get: [disable],
-      create: [schemaHooks.validateData(emailsDataValidator), schemaHooks.resolveData(emailsDataResolver)],
+      find: [disallow('external')],
+      get: [disallow()],
+      create: [schemaHooks.validateData(emailsDataValidator), schemaHooks.resolveData(emailsDataResolver), antiMailSpamming],
       patch: [schemaHooks.validateData(emailsPatchValidator), schemaHooks.resolveData(emailsPatchResolver)],
       remove: []
     },

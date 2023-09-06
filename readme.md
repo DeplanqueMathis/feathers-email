@@ -12,23 +12,23 @@ This project is a simple way to send email from a feathers api.
 1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 2. Install your dependencies
 
-  ```
-  cd path/to/feathers-mail-api
-  npm install
-  ```
+   ```
+   cd path/to/feathers-mail-api
+   npm install
+   ```
 3. In your config file add the smtp config object like this : 
-  ```
-  "smtp": {
+   ```
+   "smtp": {
 
-  }
-  ```
+   }
+   ```
 4. Create your [MongoDB](https://www.mongodb.com/) database and adapt the mongodb url in config file
 
 5. Start your app
 
-  ```
-  npm start
-  ```
+   ```
+   npm start
+   ```
 6. With any api testing application like [Postman](https://www.postman.com/) call the following url
 
    ```

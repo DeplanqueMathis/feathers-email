@@ -26,26 +26,7 @@ export const sendEmail = async (context) => {
     ...context.data
   };
 
-  const emailToContact = {
-    subject: 'Nous avons bien reçu votre demande !',
-    to: context.data.from,
-    from: "deplanque.mathis@gmail.com",
-    text: `Votre demande est bien arrivée chez nous !
-    Bonjour, nous avons bien reçu votre demande, elle sera traitée dans les plus bref délais !
-    Merci pour votre confiance !
-    L'équipe M.A.D Agency`,
-    html: `<h1>Votre demande est bien arrivée chez nous !</h1>
-    <p>Bonjour, nous avons bien reçu votre demande, elle sera traitée dans les plus bref délais !</p>
-    <p>Merci pour votre confiance !</p>
-    <p>L'équipe M.A.D Agency</p>`,
-  };
-
-  let transporter = nodemailer.createTransport(emailConf);
   transporter.sendMail(email).then(info=>{
-    console.log('Preview URL: ' + nodemailer.getTestMessageUrl(info));
-  });
-
-  transporter.sendMail(emailToContact).then(info=>{
     console.log('Preview URL: ' + nodemailer.getTestMessageUrl(info));
   });
 

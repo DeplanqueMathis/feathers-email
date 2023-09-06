@@ -27,10 +27,13 @@ export const sendEmail = async (context) => {
   };
 
   const emailToContact = {
-    subject: 'Accusé de récepetion',
+    subject: 'Nous avons bien reçu votre demande !',
     to: context.data.from,
     from: "deplanque.mathis@gmail.com",
-    text: "Nous avons bien reçu votre demande !",
+    text: `Votre demande est bien arrivée chez nous !
+    Bonjour, nous avons bien reçu votre demande, elle sera traitée dans les plus bref délais !
+    Merci pour votre confiance !
+    L'équipe M.A.D Agency`,
     html: `<h1>Votre demande est bien arrivée chez nous !</h1>
     <p>Bonjour, nous avons bien reçu votre demande, elle sera traitée dans les plus bref délais !</p>
     <p>Merci pour votre confiance !</p>

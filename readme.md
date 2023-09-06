@@ -22,26 +22,28 @@ This project is a simple way to send email from a feathers api.
 
   }
   ```
-4. Start your app
+4. Create your [MongoDB](https://www.mongodb.com/) database and adapt the mongodb url in config file
+
+5. Start your app
 
   ```
   npm start
   ```
-5. With any api testing application like [Postman](https://www.postman.com/) call the following url
+6. With any api testing application like [Postman](https://www.postman.com/) call the following url
 
-  ```
-  http://localhost:3030/emails
-  ```
+    ```
+    http://localhost:3030/emails
+    ```
 
-  With following body parameters :
+    With following body parameters :
 
-  ```
-  {
-    "name": "NAME",
-    "from": "SENDER_EMAIL",
-    "to": "DESTINATION_EMAIL",
-    "subject": "SUBJECT",
-    "text": "TEXT",
-    "html": "HTML_TEXT"
-  }
-  ```
+    ```
+    {
+      "name": "NAME",
+      "from": "SENDER_EMAIL",
+      "to": "DESTINATION_EMAIL",
+      "subject": "SUBJECT",
+      "text": "TEXT",
+      "html": "HTML_TEXT"
+    }
+    ```
